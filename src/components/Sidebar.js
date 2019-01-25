@@ -9,7 +9,7 @@ export default class Sidebar extends Component {
 		return (
 			<div className="sidebar">
 				<section className="section section--tool-selector">
-					<h3 className="section__heading">Tool</h3>
+					<h3 className="section__heading">TOOL</h3>
 					<ToolSelector
 						tool={ tools.tool }
 						action={ actions.selectTool }

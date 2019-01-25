@@ -19,6 +19,6 @@ export default function tools(state = initialState, action) {
 			})
 
 		default:
-			return state
+			return state;
 	}
 }

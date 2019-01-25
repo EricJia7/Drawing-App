@@ -4,6 +4,7 @@ import { BRUSH, ERASER } from "../constants/Tools";
 let ctx;
 
 export default class Canvas extends Component {
+	
 	constructor(props) {
 		super(props);
 		this.isDrawing = false;
@@ -23,6 +24,7 @@ export default class Canvas extends Component {
 	}
 
 	getX(event) {
+		//The mouse position relative to the left edge of the document.
 		if (event.pageX === undefined) {
 			return event.targetTouches[0].pageX - this.refs.canvas.offsetLeft;
 		}
@@ -32,6 +34,7 @@ export default class Canvas extends Component {
 	}
 
 	getY(event) {
+		//The mouse position relative to the top edge of the document.
 		if (event.pageY === undefined) {
 			return event.targetTouches[0].pageY - this.refs.canvas.offsetTop;
 		}
@@ -52,10 +55,16 @@ export default class Canvas extends Component {
 	draw(event) {
 		if (this.isDrawing) {
 			ctx.lineTo(this.getX(event), this.getY(event));
-			ctx.lineWidth = this.getStroke();
 			ctx.lineCap = "round";
 			ctx.lineJoin = "round";
-			ctx.stroke();
+			if (this.props.tools.tool === ERASER) {
+				ctx.lineWidth = 25;
+				ctx.strokeStyle = '#FFFFFF';
+				ctx.stroke();
+			} else {
+				ctx.lineWidth = this.getStroke();
+				ctx.stroke();
+			}
 		}
 		event.preventDefault();
 	}
