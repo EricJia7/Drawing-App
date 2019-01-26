@@ -2,10 +2,10 @@ import React, { PropTypes } from "react";
 import { BRUSH, STAMP, ERASER } from "../constants/Tools";
 
 export default function ToolSelector(props) {
-	const { action, tool } = props;
-	return (
-		<div>
-			<div className="radio">
+  const { action, tool } = props;
+  return (
+    <div>
+      {/* <div className="radio">
 				<input type="radio" name="tool" id="brush-select"
 					value={BRUSH} 
 					checked={tool === BRUSH} 
@@ -27,12 +27,52 @@ export default function ToolSelector(props) {
 					checked={tool === ERASER} 
 					onChange={ (e) => { action(e.target.value) } } />
 				<label htmlFor="eraser-select">Eraser</label>
-			</div>
-		</div>
-	);
+			</div> */}
+
+      <button
+        type="button"
+        className="btn btn-sm btn-secondary"
+        name="tool"
+        id="brush-select"
+        value={BRUSH}
+        onClick={e => {
+          action(e.target.value);
+        }}
+      >
+        BRUSH
+      </button>
+
+      <button
+        type="button"
+        className="btn btn-sm btn-secondary"
+        name="tool"
+        id="eraser-select"
+        value={ERASER}
+        onClick={e => {
+          action(e.target.value);
+        }}
+      >
+        ERASER
+      </button>
+
+      <button
+        type="button"
+        className="btn btn-sm btn-info"
+        name="tool"
+        id="stamp-select"
+        value={STAMP}
+        onClick={e => {
+		  action(e.target.value);
+		  console.log(e.target.value)
+        }}
+      >
+        STAMP
+      </button>
+    </div>
+  );
 }
 
 ToolSelector.propTypes = {
-	tool: PropTypes.string.isRequired,
-	action: PropTypes.func.isRequired
+  tool: PropTypes.string.isRequired,
+  action: PropTypes.func.isRequired
 };

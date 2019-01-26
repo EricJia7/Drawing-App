@@ -57,12 +57,12 @@ export default class Canvas extends Component {
 			ctx.lineTo(this.getX(event), this.getY(event));
 			ctx.lineCap = "round";
 			ctx.lineJoin = "round";
+			ctx.lineWidth = this.getStroke();
 			if (this.props.tools.tool === ERASER) {
-				ctx.lineWidth = 25;
+				// ctx.lineWidth = 25;
 				ctx.strokeStyle = '#FFFFFF';
 				ctx.stroke();
 			} else {
-				ctx.lineWidth = this.getStroke();
 				ctx.stroke();
 			}
 		}
