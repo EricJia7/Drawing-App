@@ -62,8 +62,7 @@ export default function ToolSelector(props) {
         id="stamp-select"
         value={STAMP}
         onClick={e => {
-		  action(e.target.value);
-		  console.log(e.target.value)
+          action(e.target.value);
         }}
       >
         STAMP

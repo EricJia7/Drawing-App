@@ -23,6 +23,10 @@ export default class Canvas extends Component {
 		return this.props.tools.brush_size;
 	}
 
+	getStrokeColor() {
+		return this.props.tools.brush_color;
+	}
+
 	getX(event) {
 		//The mouse position relative to the left edge of the document.
 		if (event.pageX === undefined) {
@@ -58,6 +62,7 @@ export default class Canvas extends Component {
 			ctx.lineCap = "round";
 			ctx.lineJoin = "round";
 			ctx.lineWidth = this.getStroke();
+			ctx.strokeStyle = this.getStrokeColor();
 			if (this.props.tools.tool === ERASER) {
 				// ctx.lineWidth = 25;
 				ctx.strokeStyle = '#FFFFFF';

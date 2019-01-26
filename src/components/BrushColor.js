@@ -7,10 +7,10 @@ export default function BrushColor(props) {
 		<input
 			type="color"
 			className="color-input"
-			value={brush_color}
+			defaultValue={brush_color}
 			onChange={ (e) => {
-				 action(e.target.value)
-				//action(this.value);
+				 action(e.target.value);
+				 console.log(e.target.value)
 			}}
 		/>
 	);
