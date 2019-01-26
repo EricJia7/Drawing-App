@@ -22,6 +22,7 @@
 	height: 100vh;
 	background-color: #CB5599;
 	padding: 0 10px;
+	
 	/*background-color: #263238;*/
 }
 .section {
@@ -32,6 +33,14 @@
 
 .btn-sm {
 	margin: 0 3px;
+}
+
+.section--brush-size {
+	border-color: black
+}
+
+.color-input {
+	width: 100px
 }
 
 /* Candidate defined styles go here! */

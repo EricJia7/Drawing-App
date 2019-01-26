@@ -2,6 +2,7 @@ import React, { PropTypes } from "react";
 
 export default function BrushSize(props) {
 	const { action, brush_size } = props;
+	console.log(action);
 	return (
 		<input
 			type="number"

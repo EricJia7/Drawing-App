@@ -2,7 +2,7 @@ import React, { PropTypes } from "react";
 import { BRUSH, STAMP, ERASER } from "../constants/Tools";
 
 export default function ToolSelector(props) {
-  const { action, tool } = props;
+  const { action } = props;
   return (
     <div>
       {/* <div className="radio">
