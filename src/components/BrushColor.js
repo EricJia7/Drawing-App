@@ -9,8 +9,8 @@ export default function BrushColor(props) {
 			className="color-input"
 			value={brush_color}
 			onChange={ (e) => {
-				// action(e.target.value)
-				action(this.value);
+				 action(e.target.value)
+				//action(this.value);
 			}}
 		/>
 	);

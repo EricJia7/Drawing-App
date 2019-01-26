@@ -31,7 +31,7 @@ export default class Sidebar extends Component {
 					<h3 className="section__heading text-uppercase text-primary">Brush Color</h3>
 					<BrushColor
 						brush_color={ brush_color }
-						action={ actions.changeColor }
+						action={ actions.selectColor }
 					/>
 				</section>
 
