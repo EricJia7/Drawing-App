@@ -22,9 +22,9 @@ export default class Canvas extends Component {
 
 	componentDidUpdate(prevProps) {
 		if (this.props.tools.isCanvasReset !== prevProps.tools.isCanvasReset) {
+			this.props.tools.tool = BRUSH;
 			this.resetCanvas();
 			this.props.tools.isCanvasReset = "false";
-			this.props.tools.tool = BRUSH;
 		}
 
 		if (this.props.tools.isSaveCanvas !== prevProps.tools.isSaveCanvas) {
@@ -89,6 +89,7 @@ export default class Canvas extends Component {
 			image.src = imageUrl
 			console.log(image);
 			ctx.drawImage(image,this.getX(event)-imageWidth/2,this.getY(event)-imageHeight/2, imageWidth, imageHeight);
+			ctx.closePath();
 			event.preventDefault();
 		}
 	}
@@ -137,9 +138,12 @@ export default class Canvas extends Component {
 	}
 
 	saveCanvas(event) {
+		console.log('saveCanvas has been called')
+		let saveImgURL = this.refs.canvas.toDataURL("image/png");
 		
 		let tempImg = new Image();
-		let saveImgURL = this.refs.canvas.toDataURL("image/png");
+		//Anonymous to fix the tainted canvas problem
+		tempImg.crossOrigin = "Anonymous"
 		tempImg.src = saveImgURL;
 		let w = window.open("");
 		w.document.write(tempImg.outerHTML);
