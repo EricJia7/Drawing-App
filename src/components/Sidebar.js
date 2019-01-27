@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import ToolSelector from "./ToolSelector";
 import BrushSize from "./BrushSize";
 import BrushColor from "./BrushColor";
+import ImageStamp from "./ImageStamp";
 
 export default class Sidebar extends Component {
 	render() {
 		const { tools, actions } = this.props;
-		const { brush_size, brush_color } = tools;
+		const { brush_size, brush_color, image_url } = tools;
 		return (
 
 			<div className="sidebar">
@@ -35,6 +36,13 @@ export default class Sidebar extends Component {
 					/>
 				</section>
 
+				<section className="section section--image-stamp">
+					<h3 className="section__heading text-uppercase text-primary">Image Stamp</h3>
+					<ImageStamp
+						image_url={ image_url }
+						action={ actions.selectImg }
+					/>
+				</section>
 
 			</div>
 		)

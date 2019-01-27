@@ -2,7 +2,7 @@ import React, { PropTypes } from "react";
 
 export default function BrushColor(props) {
     const { action, brush_color } = props;
-	console.log(action);
+ 
 	return (
 		<input
 			type="color"

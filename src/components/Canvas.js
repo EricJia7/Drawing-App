@@ -64,7 +64,6 @@ export default class Canvas extends Component {
 			ctx.lineWidth = this.getStroke();
 			ctx.strokeStyle = this.getStrokeColor();
 			if (this.props.tools.tool === ERASER) {
-				// ctx.lineWidth = 25;
 				ctx.strokeStyle = '#FFFFFF';
 				ctx.stroke();
 			} else {
