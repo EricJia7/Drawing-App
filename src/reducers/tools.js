@@ -1,4 +1,4 @@
-import { SELECT_TOOL, CHANGE_SIZE, SELECT_COLOR, SELECT_IMAGE, SET_IMAGE_WIDTH } from "../constants/ActionTypes";
+import { SELECT_TOOL, CHANGE_SIZE, SELECT_COLOR, SELECT_IMAGE } from "../constants/ActionTypes";
 import { BRUSH } from "../constants/Tools";
 
 const initialState = {

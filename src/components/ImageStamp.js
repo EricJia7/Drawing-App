@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react";
 
 export default function ImageStamp(props) {
-  const { action, image_url, image_width } = props;
+  const { action, image_url } = props;
 
   return (
     <div className="container">
@@ -28,9 +28,6 @@ export default function ImageStamp(props) {
       <div className="col-md-12">
         <img
           src={image_url}
-          style={{
-            width: {image_width}
-          }}
           className="rounded mx-auto d-block img-fluid"
           alt="selected"
           id="currentSelectedImage"
