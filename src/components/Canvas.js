@@ -24,6 +24,12 @@ export default class Canvas extends Component {
 		if (this.props.tools.isCanvasReset !== prevProps.tools.isCanvasReset) {
 			this.resetCanvas();
 			this.props.tools.isCanvasReset = "false";
+			this.props.tools.tool = BRUSH;
+		}
+
+		if (this.props.tools.isSaveCanvas !== prevProps.tools.isSaveCanvas) {
+			this.saveCanvas();
+			this.props.tools.isSaveCanvas = "false";
 		}
 	}
 
@@ -120,14 +126,24 @@ export default class Canvas extends Component {
 			let imageUrl = this.getImageUrl();
 			console.log(imageUrl);
 			ctx.drawImage(imageUrl);
-			event.preventDefault();
 		} else {
 			return;
 		}
+		event.preventDefault();
 	}
 
 	resetCanvas(event) {
 		ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
+	}
+
+	saveCanvas(event) {
+		
+		let tempImg = new Image();
+		let saveImgURL = this.refs.canvas.toDataURL("image/png");
+		tempImg.src = saveImgURL;
+		let w = window.open("");
+		w.document.write(tempImg.outerHTML);
+		console.log(saveImgURL);
 	}
 
 	render() {
