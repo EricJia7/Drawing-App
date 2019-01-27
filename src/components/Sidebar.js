@@ -8,7 +8,7 @@ import Reset from "./Reset";
 export default class Sidebar extends Component {
 	render() {
 		const { tools, actions } = this.props;
-		const { brush_size, brush_color, image_url } = tools;
+		const { brush_size, brush_color, image_url, isCanvasReset } = tools;
 		return (
 
 			<div className="sidebar">
@@ -48,8 +48,8 @@ export default class Sidebar extends Component {
 				<section className="section section--reset">
 					<div className="section__heading text-uppercase text-primary headerText">Reset</div>
 					<Reset
-						// image_url={ image_url }
-						// action={ actions.selectImg }
+						isCanvasReset={ isCanvasReset }
+						action={ actions.resetCanvas }
 					/>
 				</section>
 

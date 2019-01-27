@@ -1,4 +1,4 @@
-import { SELECT_TOOL, CHANGE_SIZE, SELECT_COLOR, SELECT_IMAGE } from "../constants/ActionTypes";
+import { SELECT_TOOL, CHANGE_SIZE, SELECT_COLOR, SELECT_IMAGE, RESET_CANVAS } from "../constants/ActionTypes";
 import { BRUSH } from "../constants/Tools";
 
 const initialState = {
@@ -6,7 +6,7 @@ const initialState = {
 	brush_size: "10",
 	brush_color: "#FF6347",
 	image_url: "https://pbs.twimg.com/profile_images/982276118475522049/l8lXdD3y_400x400.jpg",
-	image_width:"160px",
+	isCanvasReset: "false",
 }
 
 export default function tools(state = initialState, action) {
@@ -29,6 +29,11 @@ export default function tools(state = initialState, action) {
 		case SELECT_IMAGE:
 			return Object.assign({}, state, {
 				image_url: action.text,
+			})
+
+		case RESET_CANVAS:
+			return Object.assign({}, state, {
+				isCanvasReset: action.text
 			})
 
 		default:

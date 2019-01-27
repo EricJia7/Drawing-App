@@ -20,6 +20,13 @@ export default class Canvas extends Component {
 		ctx = this.refs.canvas.getContext("2d");
 	}
 
+	componentDidUpdate(prevProps) {
+		if (this.props.tools.isCanvasReset !== prevProps.tools.isCanvasReset) {
+			this.resetCanvas();
+			this.props.tools.isCanvasReset = "false";
+		}
+	}
+
 	getStroke() {
 		return this.props.tools.brush_size;
 	}
@@ -103,8 +110,8 @@ export default class Canvas extends Component {
 			ctx.closePath();
 			this.isDrawing = false;
 			this.isDrawingImage = false;
+			event.preventDefault();
 		}
-		event.preventDefault();
 	}
 
 	drawImage(event) {
@@ -113,7 +120,14 @@ export default class Canvas extends Component {
 			let imageUrl = this.getImageUrl();
 			console.log(imageUrl);
 			ctx.drawImage(imageUrl);
+			event.preventDefault();
+		} else {
+			return;
 		}
+	}
+
+	resetCanvas(event) {
+		ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
 	}
 
 	render() {
