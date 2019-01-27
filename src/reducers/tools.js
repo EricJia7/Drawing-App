@@ -21,14 +21,11 @@ export default function tools(state = initialState, action) {
 			})
 
 		case SELECT_COLOR:
-		console.log('!!!!')
-
 			return Object.assign({}, state, {
 				brush_color: action.text
 			})
 
 		case SELECT_IMAGE:
-		console.log('~~~~')
 			return Object.assign({}, state, {
 				image_url: action.text
 			})

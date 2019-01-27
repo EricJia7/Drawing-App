@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from "react";
+import React, { PropTypes } from "react";
 
 export default function ImageStamp(props) {
   const { action, image_url } = props;
@@ -13,7 +13,6 @@ export default function ImageStamp(props) {
           onClick={e => {
             e.preventDefault();
             document.getElementById("imageItem").click();
-            console.log('!!!!!!!!!!!!!!!')
           }}
         />
         <input
@@ -36,4 +35,9 @@ export default function ImageStamp(props) {
       </div>
     </div>
   );
+}
+
+ImageStamp.prototype = {
+  image_url: PropTypes.string.isRequired,
+  action: PropTypes.func.isRequired
 }
