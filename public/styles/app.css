@@ -26,7 +26,7 @@
   /*background-color: #263238;*/
 }
 .section {
-  min-height: 100px;
+  min-height: 90px;
   width: 100%;
   color: white;
 }
@@ -46,11 +46,16 @@
 /* Candidate defined styles go here! */
 
 .img-fluid {
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: auto;
 }
 
 #imageItem {
 	display: none;
 } 
 
+.headerText {
+  font-size: 1.6em;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+}

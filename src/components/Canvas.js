@@ -32,6 +32,14 @@ export default class Canvas extends Component {
 		return this.props.tools.image_url;
 	}
 
+	getImageStampWidth() {
+		return document.getElementById("currentSelectedImage").clientWidth;
+	}
+
+	getImageStampHeight() {
+		return document.getElementById("currentSelectedImage").clientHeight;
+	}
+
 	getX(event) {
 		//The mouse position relative to the left edge of the document.
 		if (event.pageX === undefined) {
@@ -63,9 +71,11 @@ export default class Canvas extends Component {
 			this.isDrawingImage = true;
 			let image = new Image();
 			let imageUrl = this.getImageUrl();
+			let imageWidth = this.getImageStampWidth();
+			let imageHeight = this.getImageStampHeight();
 			image.src = imageUrl
 			console.log(image);
-			ctx.drawImage(image,this.getX(event)-75,this.getY(event)-75, 150, 150);
+			ctx.drawImage(image,this.getX(event)-imageWidth/2,this.getY(event)-imageHeight/2, imageWidth, imageHeight);
 			event.preventDefault();
 		}
 	}
@@ -92,6 +102,7 @@ export default class Canvas extends Component {
 			ctx.stroke();
 			ctx.closePath();
 			this.isDrawing = false;
+			this.isDrawingImage = false;
 		}
 		event.preventDefault();
 	}
@@ -110,6 +121,7 @@ export default class Canvas extends Component {
 			<canvas
 				className="canvas"
 				ref="canvas"
+				id="mainCancas"
 				onMouseDown={  this.start}
 				onMouseUp={ this.end }
 				onMouseMove={ this.draw }

@@ -3,6 +3,7 @@ import ToolSelector from "./ToolSelector";
 import BrushSize from "./BrushSize";
 import BrushColor from "./BrushColor";
 import ImageStamp from "./ImageStamp";
+import Reset from "./Reset";
 
 export default class Sidebar extends Component {
 	render() {
@@ -13,7 +14,7 @@ export default class Sidebar extends Component {
 			<div className="sidebar">
 				<br />
 				<section className="section section--tool-selector">
-					<h3 className="section__heading text-uppercase text-primary">Tool</h3>
+					<div className="section__heading text-uppercase text-primary headerText">Tool</div>
 					<ToolSelector
 						tool={ tools.tool }
 						action={ actions.selectTool }
@@ -21,7 +22,7 @@ export default class Sidebar extends Component {
 				</section>
 
 				<section className="section section--brush-size">
-					<h3 className="section__heading text-uppercase text-primary">Brush Size</h3>
+					<div className="section__heading text-uppercase text-primary headerText">Brush Size</div>
 					<BrushSize
 						brush_size={ brush_size }
 						action={ actions.changeSize }
@@ -29,7 +30,7 @@ export default class Sidebar extends Component {
 				</section>
 
 				<section className="section section--brush-color">
-					<h3 className="section__heading text-uppercase text-primary">Brush Color</h3>
+					<div className="section__heading text-uppercase text-primary headerText">Brush Color</div>
 					<BrushColor
 						brush_color={ brush_color }
 						action={ actions.selectColor }
@@ -37,10 +38,18 @@ export default class Sidebar extends Component {
 				</section>
 
 				<section className="section section--image-stamp">
-					<h3 className="section__heading text-uppercase text-primary">Image Stamp</h3>
+					<div className="section__heading text-uppercase text-primary headerText">Image Stamp</div>
 					<ImageStamp
 						image_url={ image_url }
 						action={ actions.selectImg }
+					/>
+				</section>
+
+				<section className="section section--reset">
+					<div className="section__heading text-uppercase text-primary headerText">Reset</div>
+					<Reset
+						// image_url={ image_url }
+						// action={ actions.selectImg }
 					/>
 				</section>
 
