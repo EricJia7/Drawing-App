@@ -21,7 +21,7 @@
   right: 0;
   height: 100vh;
   background-color: #cb5599;
-  padding: 0 10px;
+  /* padding: 0 10px; */
 
   /*background-color: #263238;*/
 }
@@ -29,6 +29,7 @@
   min-height: 90px;
   width: 100%;
   color: white;
+
 }
 
 .btn-sm {
@@ -36,12 +37,14 @@
 }
 
 .section--brush-size {
-  border-color: black;
+  border-color:gray;
 }
 
 .color-input {
   width: 100px;
 }
+
+
 
 /* Candidate defined styles go here! */
 
@@ -55,7 +58,16 @@
 } 
 
 .headerText {
+  padding-top: 4.5px;
   font-size: 1.6em;
   font-weight: bold;
   font-family: "Open Sans", sans-serif;
 }
+
+.section {
+  border-bottom: solid;
+  padding-bottom: 1em;
+  border-color:gray;
+  padding: 0 10px;
+}
+

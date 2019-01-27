@@ -13,7 +13,6 @@ export default class Sidebar extends Component {
 		return (
 
 			<div className="sidebar">
-				<br />
 				<section className="section section--tool-selector">
 					<div className="section__heading text-uppercase text-primary headerText">Tool</div>
 					<ToolSelector

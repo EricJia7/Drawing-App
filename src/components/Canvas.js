@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from "react";
+import React, { Component, PropTypes } from "react";
 import { BRUSH, ERASER, STAMP } from "../constants/Tools";
 
 let ctx;
@@ -143,7 +143,8 @@ export default class Canvas extends Component {
 		
 		let tempImg = new Image();
 		//Anonymous to fix the tainted canvas problem
-		tempImg.crossOrigin = "Anonymous"
+		tempImg.setAttribute('crossOrigin', 'anonymous');
+		
 		tempImg.src = saveImgURL;
 		let w = window.open("");
 		w.document.write(tempImg.outerHTML);

@@ -1,11 +1,12 @@
 import { SELECT_TOOL, CHANGE_SIZE, SELECT_COLOR, SELECT_IMAGE, RESET_CANVAS, SAVE_CANVAS } from "../constants/ActionTypes";
+import stIcon from "../../public/img/st-icon.png"
 import { BRUSH } from "../constants/Tools";
 
 const initialState = {
 	tool: BRUSH,
 	brush_size: "10",
 	brush_color: "#FF6347",
-	image_url: "https://pbs.twimg.com/profile_images/982276118475522049/l8lXdD3y_400x400.jpg",
+	image_url: stIcon,
 	isCanvasReset: "false",
 	isSaveCanvas: "false",
 }
